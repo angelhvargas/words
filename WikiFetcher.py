@@ -1,0 +1,3 @@
+
+class WikiFetcher:
+    pass
