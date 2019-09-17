@@ -1,6 +1,6 @@
 X Can create instance of WikiFetcher
 X Can create instance of WordsProcessor
-- Can fetch a Wikipedia page extract using an API request
+X Can fetch a valid Wikipedia page extract using an API request
 - Can parse the Wikipedia page extract to a file
 - Can WordsProcessor read the file (open) if exists
 - Can WordsProcessor map words
@@ -8,4 +8,5 @@ X Can create instance of WordsProcessor
 - Can WordsProcessor list a dictionary with the resulting words collected from the map-reduce process
 
 Functional:
-- ...
+- Can WordsProcessor list grouped words with same count number match
+- Can WordsProcessor list top 5 Words in Wikipedia page extract

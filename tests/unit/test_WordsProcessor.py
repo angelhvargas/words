@@ -1,4 +1,4 @@
-import WordsProcessor
+from WordsProcessor import WordsProcessor
 
 
 def test_can_instanstiate_words_processor():
