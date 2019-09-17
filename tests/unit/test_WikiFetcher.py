@@ -1,9 +1,14 @@
 from WikiFetcher import WikiFetcher
+from pathlib import Path
+
+page_id_test = 21721040
 
 
-def test_can_fetch_wikipedia_page_extract_with_given_id():
-    """test if class WikiFetcher can fetch/pull a page extract from Wikipedia"""
-    page_id_test = 21721040
+def test_can_write_to_file_wikipedia_page_extract():
+    """test if data pulled from wikipedia can be written in a file"""
+    global page_id_test
     fetcher = WikiFetcher()
-    data = fetcher.fetch_wiki_extract(page_id_test)
-    assert len(data["query"]["pages"][str(page_id_test)]["extract"]) > 0
+    fetcher.fetch_wiki_extract(page_id_test)
+    path = fetcher.to_file("test.txt")
+    file = Path(path)
+    assert file.is_file() is True

@@ -1,7 +1,7 @@
 X Can create instance of WikiFetcher
 X Can create instance of WordsProcessor
 X Can fetch a valid Wikipedia page extract using an API request
-- Can parse the Wikipedia page extract to a file
+X Can write out to a file the Wikipedia page extract
 - Can WordsProcessor read the file (open) if exists
 - Can WordsProcessor map words
 - Can WordsProcessor reduce the words in the map
