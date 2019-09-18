@@ -1,5 +1,6 @@
 import requests
 from pathlib import Path
+from WikiPage import WikiPage
 
 
 class WikiFetcher:
@@ -9,14 +10,11 @@ class WikiFetcher:
     ##########################
     # attributes
 
+    # WikiPage DTO
+    wiki_page = None
+
     # api endpoint uri
     page_extract_api_url = "https://en.wikipedia.org/w/api.php"
-
-    # page extract
-    extract = ""
-
-    # path to file
-    absolute_path = ""
 
     def fetch_wiki_extract(self, page_id):
         """fetch_wiki_extract fetch an extract from the wikipedia
@@ -48,14 +46,20 @@ class WikiFetcher:
                 "error": e
             }
 
-        self.extract = response.json()["query"]["pages"][str(page_id)]["extract"]
-        return self.extract
+        data = {
+            "title": response.json()["query"]["pages"][str(page_id)]["title"],
+            "extract": response.json()["query"]["pages"][str(page_id)]["extract"]
+        }
+
+        self.wiki_page = WikiPage(page_id=page_id, title=data["title"], extract=data["extract"])
+
+        return self.wiki_page
 
     def to_file(self, filename="output.txt"):
         """write extract to a file and returns the absolute path to it"""
         with open(filename, "w+", encoding='utf-8') as file:
-            file.write(self.extract)
+            file.write(self.wiki_page.extract)
             file.close()
 
-        self.absolute_path = Path(filename)
-        return self.absolute_path
+        absolute_path = Path(filename)
+        return absolute_path
