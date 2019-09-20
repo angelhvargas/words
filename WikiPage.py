@@ -1,5 +1,6 @@
 
 class WikiPage:
+    """WikiPage DTO"""
     ##################
     # attributes
 
@@ -14,9 +15,10 @@ class WikiPage:
 
     def __init__(self, **kwargs):
         self.page_id = kwargs.pop('page_id')
-        self._title = kwargs.pop('title')
-        self._extract = kwargs.pop('extract')
+        self.title = kwargs.pop('title')
+        self.extract = kwargs.pop('extract')
 
+    # getters
     @property
     def title(self):
         return self._title

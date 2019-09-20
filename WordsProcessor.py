@@ -1,13 +1,22 @@
-import mmap
+from WikiPage import WikiPage
 import os
 
 
 class WordsProcessor:
-    """class WordsProcessor does count words in a given file using
-    map-reduce approach"""
+    """
+    class WordsProcessor does count words in a given file using
+    map-reduce approach
+    """
+    file = None
 
-    file_path = None
+    def __init__(self, data):
+        if isinstance(data, WikiPage):
+            pass
+        elif isinstance(data, str):
+            if os.path.isfile(data):
+                self.file = data
+            else:
+                raise FileExistsError("Invalid file or path")
 
-    def __init__(self, file_path):
-        self.file_path = file_path
-        assert os.path.exists(self.file_path)
+    def load_data(self):
+        pass
