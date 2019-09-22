@@ -1,4 +1,6 @@
 .pytest_cache
 .idea
 .coverage
+*.txt
+htmlcov
 venv
