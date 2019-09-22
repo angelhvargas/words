@@ -45,12 +45,3 @@ class TestWikiFetcher:
         """"""
         assert isinstance(api_client.get_wiki_page_extract(self.valid_page_id_test), WikiPage)
         assert not isinstance(api_client.get_wiki_page_extract(self.invalid_page_id_test), WikiPage)
-
-    # def test_wikipedia_page_extract_written_to_file(self):
-    #     """test if data pulled from wikipedia can be
-    #      written in a file"""
-    #     fetcher = WikiAPIClient()
-    #     fetcher.get_wiki_page_extract(self.page_id_test)
-    #     path = fetcher.to_file("test.txt")
-    #     file = Path(path)
-    #     assert file.is_file() is True

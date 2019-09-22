@@ -40,7 +40,7 @@ Test Coverage:
 
 To run and view the test coverage:
 
-    run `pytest --cov=WordsProcessor --cov=WikiClient --cov=WikiAPIClient tests/`
+    run `pytest --cov=WordsProcessor --cov=WikiPage --cov=WikiAPIClient tests/`
     
 once the process finish, open the directory created: `htmlcov`
 
