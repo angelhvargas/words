@@ -52,9 +52,9 @@ class WordsProcessor:
             return False
 
     @staticmethod
-    def map(__text):
+    def map(__text) -> list:
         """
-
+        from a given string, splits 4 characters or larger words into a list
         :param __text: string
         :return: list
         """
@@ -62,7 +62,7 @@ class WordsProcessor:
         words_list = pattern.findall(__text.lower())
         return words_list
 
-    def reduce(self, __map):
+    def reduce(self, __map) -> dict:
         """
         reduce mapped dictionary to count repeated values
         :param __map:
@@ -72,8 +72,11 @@ class WordsProcessor:
             self._words[word] += 1
         return self.words
 
-    def process(self):
-        """"""
+    def process(self) -> defaultdict:
+        """
+        process map reduce to a valid loaded file.
+        :return: defaultdict
+        """
         if isinstance(self.file, str):
             try:
                 with open(self.file) as fr:

@@ -12,12 +12,16 @@ class WikiAPIClient:
     # WikiPage DTO
     wiki_page = None
 
-    def get_wiki_page_extract(self, page_id):
-        """"get_wiki_page_extract
+    def get_wiki_page_extract(self, page_id: int):
+        """
+        get_wiki_page_extract
 
         Fetch an extract from the Wikipedia
         API and returns a WikiPage DTO object if the response is correct,
         otherwise will return a json
+
+        :param page_id:
+        :return:
         """
 
         api_endpoint = "https://en.wikipedia.org/w/api.php"
@@ -40,8 +44,15 @@ class WikiAPIClient:
         return self.wiki_page
 
     @staticmethod
-    def api_request(api_endpoint, params):
-        """static method api_request: does execute an api request to wikipedia api"""
+    def api_request(api_endpoint: str, params: dict) -> dict:
+        """
+        api_request
+
+        executes an api request to wikipedia API
+        :param api_endpoint:
+        :param params:
+        :return:
+        """
 
         # page_id
         page_id = str(params["pageids"])
