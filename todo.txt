@@ -3,10 +3,10 @@ X Can create instance of WordsProcessor
 X Can create instance of WikiPage
 X Can fetch a valid Wikipedia page extract using an API request
 X Can WordsProcessor load data to process
-- Can WordsProcessor map words
-- Can WordsProcessor reduce the words in the map
-- Can WordsProcessor list a dictionary with the resulting words collected from the map-reduce process
+x Can WordsProcessor map words
+x Can WordsProcessor reduce the words in the map
+x Can WordsProcessor list a dictionary with the resulting words collected from the map-reduce process
 
 Functional:
-- Can WordsProcessor list grouped words with same count number match
-- Can WordsProcessor list top 5 Words in Wikipedia page extract
+x Can WordsProcessor list grouped words with same count number match
+x Can WordsProcessor list top 5 Words in Wikipedia page extract

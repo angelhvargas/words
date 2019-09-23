@@ -66,6 +66,7 @@ class TestWordsProcessor:
         :param wiki_page:
         :return: None
         """
+        words_processor.load_data(wiki_page)
         assert words_processor.write_in_file("test_file.txt")
 
     def test_can_map_words(self, words_processor: WordsProcessor, wiki_page: WikiPage):

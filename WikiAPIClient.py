@@ -75,7 +75,6 @@ class WikiAPIClient:
             }
 
         if response.status_code == 200 and "missing" not in data["query"]["pages"][page_id]:
-            print(data)
             data = {
                 "page_id": page_id,
                 "title": data["query"]["pages"][page_id]["title"],
