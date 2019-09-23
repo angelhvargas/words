@@ -30,7 +30,7 @@ class WikiAPIClient:
             "action": "query",
             "prop": "extracts",
             "pageids": page_id,
-            "explaintext": 1,
+            "explaintext": True,
             "format": "json"
         }
 
