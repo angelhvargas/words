@@ -2,6 +2,18 @@ Words
 --------------
 Author: Angel Vargas
 
+Usage
+-----
+
+Run from your console:
+ 
+`python word_frequency.py --page_id 21721040  --number 20`
+
+where: 
+    
+    `[page_id]` is the wikipedia page to query
+    `[number]` is the number of results you want to aggregate
+
 Requirements:
 -------------
 1. Python 3.7
