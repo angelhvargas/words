@@ -19,7 +19,7 @@ class WordsProcessor:
 
     def load_data(self, __data):
         """
-
+        Load dto or file to be processed
         :param __data:
         :return: self
         """
@@ -35,16 +35,16 @@ class WordsProcessor:
             raise FileExistsError("Invalid file or path, a valid dto or file is required")
         return self
 
-    def write_in_file(self, filename="text.txt"):
+    def write_in_file(self, __filename="text.txt"):
         """write_in_file
 
         writes page extract to a file, this allow to flush requests to files if needed in case of
          parallel processing.
-        :param filename: str
+        :param __filename: str
         :return: self|False
         """
         try:
-            with open(filename, '+w') as writer:
+            with open(__filename, 'w+', encoding="latin-1", errors='ignore') as writer:
                 writer.write(self.text)
                 writer.close()
             return self
