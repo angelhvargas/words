@@ -42,9 +42,9 @@ _page_id = None
 
 def process(_page_id: int, _number: int) -> None:
     """
-
-    :param _page_id:
-    :param _number:
+    Main execution thread.
+    :param _page_id: wikipedia page id
+    :param _number: number of results.
     :return:
     """
     wiki_api_client = WikiAPIClient()
